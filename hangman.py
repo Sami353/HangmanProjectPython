@@ -1,5 +1,6 @@
 import random
 from words import words
+from manhang import stages
 
 def get_word(): 
     word = random.choice(words) #randomly chooses something from that list
@@ -47,77 +48,6 @@ def play(word):
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
 
 def manhang(tries):
-    stages = [  # final state: head, torso, both arms, and both legs
-                """
-                   --------
-                   |      |
-                   |      0
-                   |     \|/
-                   |      |
-                   |     / \\
-                   -
-                """,
-                # head, torso, both arms, and one leg
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \|/
-                   |      |
-                   |     / 
-                   -
-                """,
-                # head, torso, and both arms
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \|/
-                   |      |
-                   |      
-                   -
-                """,
-                # head, torso, and one arm
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \|
-                   |      |
-                   |     
-                   -
-                """,
-                # head and torso
-                """
-                   --------
-                   |      |
-                   |      O
-                   |      |
-                   |      |
-                   |     
-                   -
-                """,
-                # head
-                """
-                   --------
-                   |      |
-                   |      O
-                   |    
-                   |      
-                   |     
-                   -
-                """,
-                # initial empty state
-                """
-                   --------
-                   |      |
-                   |      
-                   |    
-                   |      
-                   |     
-                   -
-                """
-    ]
     return stages[tries]
 
 def main():
